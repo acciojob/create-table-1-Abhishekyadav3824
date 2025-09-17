@@ -1,17 +1,20 @@
-const table=document.getElementById("sampleTable");
-let count=1
+const table = document.getElementById("sampleTable");
+
 function insert_Row() {
-	const tr=document.createElement("tr")
-	const td1=document.createElement("td")
-	const td2=document.createElement("td")
-	td1.innerText=`New Cell${count}`
-	count++
-	td2.innerText=`New Cell${count}`
-	count++
-	tr.append(td1,td2)
-	table.prepend(tr)
-	
-    //Write your code here
-  
-  
+    // Create a new row
+    const newRow = document.createElement("tr");
+
+    // Create two new cells
+    const cell1 = document.createElement("td");
+    const cell2 = document.createElement("td");
+
+    // Set their text
+    cell1.innerText = "New Cell1";
+    cell2.innerText = "New Cell2";
+
+    // Append cells into row
+    newRow.append(cell1, cell2);
+
+    // Insert row at the top of the table
+    table.insertBefore(newRow, table.firstChild);
 }
